@@ -15,7 +15,7 @@ import { CodeMirror6 } from '/codemirror-mediawiki/dist/main.min.js';
             document.getElementById(id).closest('.fieldLayout').style.display = display;
         }
         if (isMediaWiki || lang === 'html') {
-            parserConfig || (parserConfig = await (await fetch('/wikiparser-node/config/default.json')).json());
+            parserConfig || (parserConfig = await (await fetch('https://bhsd-harry.github.io/wikiparser-node/config/default.json')).json());
             config || (config = CodeMirror6.getMwConfig(parserConfig));
         }
         cm.setLanguage(lang, config);
